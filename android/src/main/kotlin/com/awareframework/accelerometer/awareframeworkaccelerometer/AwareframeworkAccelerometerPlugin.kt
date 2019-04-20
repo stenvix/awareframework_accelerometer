@@ -1,6 +1,7 @@
 package com.awareframework.accelerometer.awareframeworkaccelerometer
 
 import android.content.Context
+import com.awareframework.android.core.db.Engine
 import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
@@ -70,6 +71,7 @@ class AwareframeworkAccelerometerPlugin(val appContext: Context) : MethodCallHan
             if(label!=null) this.label = label
             if(enabled !=null) this.enabled = enabled
             this.sensorObserver = accelerometerObserver
+            this.dbType = Engine.DatabaseType.NONE
         }
     }
 }
